@@ -3,16 +3,16 @@ python:
   - "2.7"
 
 install:
-  - git clone https://github.com/mjuric/conda-lsst
-  - cd conda-lsst
-  - ./bin/bootstrap.sh
-  - export PATH="$PWD/bin:$PWD/miniconda/bin:$PATH"
-  - hash -r
-
-  - conda config --set always_yes yes --set changeps1 no
-  - conda config --add channels http://eupsforge.net/conda/dev
-
+  - pwd
+  - ls -l
+  - source ./prepare.sh
   - conda info -a
 
+cache:
+  directories:
+    - $TRAVIS_BUILD_DIR/conda-lsst
+
 script:
-  - conda lsst build build:b1506 wcslib
+  - echo Dummy
+  - export
+#   - conda lsst build build:b1506 wcslib
