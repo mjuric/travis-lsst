@@ -23,4 +23,4 @@ conda config --add channels http://eupsforge.net/conda/dev
 # symlink the database dir
 ln -s ../pkginfo-cache
 ls -l
-ls -lRt pkginfo-cache
+ls -lRt pkginfo-cache/
