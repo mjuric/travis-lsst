@@ -10,9 +10,9 @@ install:
 
 cache:
   directories:
-    - $TRAVIS_BUILD_DIR/conda-lsst
+    - $TRAVIS_BUILD_DIR/pkginfo-cache
 
 script:
   - echo Dummy
   - export
-#   - conda lsst build build:b1506 wcslib
+  - conda lsst build build:b1506 wcslib
