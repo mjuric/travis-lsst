@@ -14,4 +14,4 @@ cache:
     - $TRAVIS_BUILD_DIR/pkginfo-cache
 
 script:
-  - conda lsst build build:b1507 lsst_distrib lsst_sims
+  - conda lsst build build:b1517 lsst_distrib lsst_sims
