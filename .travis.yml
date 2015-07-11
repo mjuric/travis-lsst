@@ -3,16 +3,16 @@ python:
   - "2.7"
 
 install:
-  - wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh;
-  - bash miniconda.sh -b -p $HOME/miniconda
-  - export PATH="$HOME/miniconda/bin:$PATH"
+  - git clone https://github.com/mjuric/conda-lsst
+  - cd conda-lsst
+  - ./bin/bootstrap.sh
+  - export PATH="$PWD/bin:$PWD/miniconda/bin:$PATH"
   - hash -r
-  - conda config --set always_yes yes --set changeps1 no
-  - conda info -a
 
-  # setup channel
+  - conda config --set always_yes yes --set changeps1 no
   - conda config --add channels http://eupsforge.net/conda/dev
 
+  - conda info -a
+
 script:
-  - conda install lsst-cfitsio
-  - echo "Success"
+  - conda lsst build build:b1506 wcslib
